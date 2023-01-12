@@ -6,8 +6,6 @@ function Seat(block, row, column, classSeat, passenger) {
   this.passenger = passenger;
 }
 
-// TIME COMPLEXITY : O(n)
-// space complexity : 0
 var controller = {
   init: function () {
     let seats = document.getElementById("seats");
@@ -35,8 +33,6 @@ var controller = {
     });
   },
 
-  // TIME COMPLEXITY : O(n)
-
   transformInput: function (string) {
     // remove space
     string = string.replace(/\s/g, "");
@@ -57,15 +53,12 @@ var controller = {
     return array;
   },
 
-  //TIME COMPLEXITY : O(n)
   comparator: function (key) {
     return function (a, b) {
       return a[key] - b[key];
     };
   },
 
-  // TIME COMPLEXITY : O(n^2)
-  // SPACE COMPLEXITY : 2(arrayRowsColumns.length + que)
   validateInput: function (arrayRowsColumns, que) {
     if (arrayRowsColumns.length > 8) {
       alert("Too many sections with the rows and columns!");
@@ -90,10 +83,6 @@ var controller = {
       return false;
     }
   },
-
-  // TIME COMPLEXITY : O(n^3)
-
-  // SPACE COMPLEXITY : 6 + (inputArray.length + resultArr.length))
 
   sortSeat: function (inputArray, resultArr) {
     for (block = 1; block <= inputArray.length; block++) {
@@ -121,8 +110,6 @@ var controller = {
     }
   },
 
-  // TIME COMPLEXITY : O( n + 1) : O(n)
-  // SPACE COMPLEXITY : que.length + res.length
   seatPassengers: function (res, que) {
     if (res.length < que) {
       alert(
@@ -139,8 +126,6 @@ var controller = {
   },
 };
 
-// TIME COMPLEXITY : O(n)
-// space complexity : 1
 var render = {
   clearFromDOM: function (element) {
     while (element.firstChild) {
@@ -153,8 +138,6 @@ var render = {
     seats.style.backgroundSize = "contain";
   },
 
-  // TIME COMPLEXITY : O(n^3)
-  // space complexity : 3(arrInput.length + arrResult.length)
   createSeating: function (arrInput, arrResult) {
     for (i = 0; i < arrInput.length; i++) {
       table = document.createElement("table");
